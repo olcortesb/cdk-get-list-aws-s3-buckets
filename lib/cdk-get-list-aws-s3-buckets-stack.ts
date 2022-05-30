@@ -10,6 +10,7 @@ export class CdkGetListAwsS3BucketsStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
+    // create nodejsfuncttion
     const getListAwsS3Buckets = new NodejsFunction(this, "LambdaGetStatus", {
       runtime: Runtime.NODEJS_14_X,
       entry: path.join(__dirname, `/../functions/function.ts`),

@@ -66,10 +66,10 @@ curl https://xxxxxxxxxxxxx.lambda-url.us-west-2.on.aws/                         
 Delete the stack
 
 ```
-cdk destroy
+cdk destroy 
 ```
 
-# Disclaimer
+# Disclaimer ⚠️ 🚩
 - Some services may have a cost 
 - The lambda has no secure Auth, change this configurations acord you need
 ```
