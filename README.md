@@ -2,8 +2,8 @@
 
 Summary: 
 
-This demo deploy a AWS lambda whit [CDK](https://aws.amazon.com/es/cdk/).
-The lambda return a list of all s3 buckets in the deploy account.
+This demo deploys an AWS lambda with [CDK](https://aws.amazon.com/es/cdk/).
+The lambda returns a list of all s3 buckets in the deploy account.
 
 # Prerequisites
 
@@ -28,7 +28,7 @@ npm install
 npm run build
 ```
 
-[Bootstrapping](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html) cdk in aws acount 
+[Bootstrapping](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html) cdk in aws account 
 ```
 cdk bootstrap xxxxxxxxxxxx/xx-xxxx-x
 ```
@@ -41,9 +41,7 @@ cdk synth
 cdk deploy
 ```
 
-Test: 
-
-Take the ouput URL 
+Output deploy: 
 
 ```
  ✅  CdkGetListAwsS3BucketsStack
@@ -55,7 +53,7 @@ CdkGetListAwsS3BucketsStack.FunctionUrl = https://xxxxxxxxx.lambda-url.us-west-2
 
 ✨  Total time: 65.73s
 ```
-Call the url
+Make a request to the URL
 ```
 curl https://xxxxxxxxxxxxx.lambda-url.us-west-2.on.aws/                                  2.3.0
 [{"Name":"gidiuiidrxqu","CreationDate":"202X-1X-05T11:00:24.000Z"},
@@ -71,8 +69,8 @@ cdk destroy
 
 # Disclaimer ⚠️ 🚩
 - Some services may have a cost 
-- The lambda has no secure Auth, change this configurations acord you need
-```
+- The lambda has no secure Auth, change this configurations according to your need
+```js
 const urlgetListAwsS3Buckets = getListAwsS3Buckets.addFunctionUrl({
   authType: FunctionUrlAuthType.NONE,
   cors: {
@@ -85,7 +83,7 @@ const urlgetListAwsS3Buckets = getListAwsS3Buckets.addFunctionUrl({
 
 * `npm run build`   compile typescript to js
 * `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
+* `npm run test`    run the jest unit tests
 * `cdk deploy`      deploy this stack to your default AWS account/region
 * `cdk diff`        compare deployed stack with current state
 * `cdk synth`       emits the synthesized CloudFormation template
